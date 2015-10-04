@@ -20,7 +20,7 @@ import static com.pi4j.io.gpio.PinState.HIGH;
  *
  * @see <http://pi4j.com>
  */
-public class StepperMotor28BYJ48 implements Runnable {
+public class StepperMotor28BYJ48 {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(StepperMotor28BYJ48.class);
 	
@@ -79,8 +79,6 @@ public class StepperMotor28BYJ48 implements Runnable {
 	
 	/** Indicates if the motor is started or not. **/
 	private Boolean started = false;
-	
-	private int runDirection = 0;
 	
 	/**
 	 * Connects a new stepper motor instance with the pins on a Raspberry Pi
@@ -211,46 +209,6 @@ public class StepperMotor28BYJ48 implements Runnable {
 	}
 
 	/**
-	 * Starts rotating the motor clockwise until stop is called.
-	 */
-	public void startClockwise() {
-		runDirection = 1;
-		new Thread(this).start();
-	}
-
-	/**
-	 * Starts rotating the motor counter clockwise until stop is called.
-	 */
-	public void startCounterClockwise() {
-		runDirection = -1;
-		new Thread(this).start();
-	}
-	
-	/**
-	 * Starts the motor in a loop until stop() is called. Do not call
-	 * this method directly but use {@link #startClockwise()} or {@link #startCounterClockwise()}
-	 * instead.
-	 */
-	public void run() {
-		synchronized (started) {
-			started = true;
-		}
-		while (started) {
-			step(runDirection);
-		}
-	}
-
-	/**
-	 * Stops the motor. Calling this method when the motor has
-	 * already stopped won't have any effect.
-	 */
-	public void stop() {
-		synchronized (started) {
-			started = false;
-		}
-	}
-
-	/**
 	 * Performs a demo of the various methods to move the motor.
 	 */
 	public void performDemo() {
@@ -288,14 +246,6 @@ public class StepperMotor28BYJ48 implements Runnable {
 		setSteppingMethod(SteppingMethod.HALF_STEP);
 		angleRotation(270);
 		LOG.info("Done.");
-		
-		LOG.info("Starting clockwise... ");
-		startClockwise();
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-		}
-		stop();
 	}
 
 	/**
