@@ -77,9 +77,6 @@ public class StepperMotor28BYJ48 {
 	/** The current stepping method of this motor **/
 	private SteppingMethod steppingMethod;
 	
-	/** Indicates if the motor is started or not. **/
-	private Boolean started = false;
-	
 	/**
 	 * Connects a new stepper motor instance with the pins on a Raspberry Pi
 	 * and sets a step duration. Per default the half step stepping method
@@ -124,8 +121,6 @@ public class StepperMotor28BYJ48 {
 		
 		this.stepDuration = stepDuration;
 		this.steppingMethod = steppingMethod;
-
-		started = false;
 	}
 	
 	/**
@@ -246,13 +241,6 @@ public class StepperMotor28BYJ48 {
 		setSteppingMethod(SteppingMethod.HALF_STEP);
 		angleRotation(270);
 		LOG.info("Done.");
-	}
-
-	/**
-	 * Returns true if this motor currently is started, false otherwise.
-	 */
-	public boolean isStarted() {
-		return started;
 	}
 	
 	/**
