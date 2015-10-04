@@ -328,11 +328,6 @@ public class StepperMotor28BYJ48 implements Runnable {
 			Thread.sleep(stepDuration);
 		} catch (InterruptedException e) {
 		}
-		
-		// TODO: needed?
-		for (int i = 0; i < 4; i++) {
-			motorPins[i].low();
-		}
 	}
 	
 	/**
