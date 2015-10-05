@@ -91,7 +91,7 @@ public class StepperMotor28BYJ48 {
 	 * @param stepDuration - the pause between two steps in milliseconds.
 	 *
 	 */
-	StepperMotor28BYJ48(Pin pinA, Pin pinB, Pin pinC, Pin pinD, int stepDuration) {
+	public StepperMotor28BYJ48(Pin pinA, Pin pinB, Pin pinC, Pin pinD, int stepDuration) {
 		this(pinA, pinB, pinC, pinD, stepDuration, SteppingMethod.HALF_STEP);
 	}
 
@@ -109,7 +109,7 @@ public class StepperMotor28BYJ48 {
 	 * @param steppingmethod - the stepping method to be used by the motor
 	 *
 	 */
-	StepperMotor28BYJ48(Pin pinA, Pin pinB, Pin pinC,
+	public StepperMotor28BYJ48(Pin pinA, Pin pinB, Pin pinC,
 			Pin pinD, int stepDuration, SteppingMethod steppingMethod)
 	{
 		motorPins = new GpioPinDigitalOutput[4];
