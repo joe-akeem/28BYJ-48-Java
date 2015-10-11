@@ -11,7 +11,7 @@ sudo apt-get update && sudo apt-get install oracle-java7-jdk
 ```
 
 ### Maven
-Find instruction on how to install Maven in your Raspberry Pi [here](http://www.xianic.net/post/installing-maven-on-the-raspberry-pi/).
+Find instruction on how to install Maven on your Raspberry Pi [here](http://www.xianic.net/post/installing-maven-on-the-raspberry-pi/).
 
 ## Getting, Building
 
