@@ -35,14 +35,14 @@ Also check out the example in the src/main/java/de/joeakeem/m28BYJ48.Example cla
 
 ### Connecting the Motor
 
-The table below uses the WiringPi/GPIO numbering system. Connect the motor to the ULN2003 board and hook up the board to the Raspberry Pi oins as follows:  
+The table below uses the WiringPi/GPIO numbering system. Connect the motor to the ULN2003 board and hook up the board to the Raspberry Pi pins as follows:  
 
-|ULN2003 Pin|Rasbery Pin|
-|-----------|-----------|
-|In1        |7          |
-|In2        |0          |
-|In3        |2          |
-|In4        |3          |
+|ULN2003 Pin|Raspberry Pin|
+|-----------|-------------|
+|In1        |7            |
+|In2        |0            |
+|In3        |2            |
+|In4        |3            |
 
 The + and - pins can also be connected to the Raspberry Pi or to an independent power source. If you connect it to the Raspberry Pi make sure the + pin is connected to a 5V pin on the Raspberry and the - pin of the ULN2003 board is connected to a Raspberry ground pin.
 
