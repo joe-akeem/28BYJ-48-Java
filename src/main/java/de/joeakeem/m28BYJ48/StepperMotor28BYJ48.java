@@ -34,7 +34,12 @@ public class StepperMotor28BYJ48 {
 	public enum SteppingMethod {
 		WAVE_DRIVE, FULL_STEP, HALF_STEP
 	};
-	
+
+	/**
+	 * The electric potential sequence to be applied to the motor in
+	 * wave drive mode.
+	 * @see <https://www.youtube.com/watch?v=B86nqDRskVU>
+	 */
 	private static final PinState WAVE_DRIVE_MOTOR_SEQUENCE[][] = new PinState[][] {
 			{ LOW,  LOW,  LOW,  HIGH },
 			{ LOW,  LOW,  HIGH, LOW },
@@ -46,6 +51,11 @@ public class StepperMotor28BYJ48 {
 			{ HIGH, LOW,  LOW,  LOW }
 	};
 	
+	/**
+	 * The electric potential sequence to be applied to the motor in
+	 * full step mode.
+	 * @see <https://www.youtube.com/watch?v=B86nqDRskVU>
+	 */
 	private static final PinState FULL_STEP_MOTOR_SEQUENCE[][] = new PinState[][] {
 			{ LOW,  LOW,  LOW,  HIGH },
 			{ LOW,  LOW,  HIGH, LOW },
@@ -57,6 +67,11 @@ public class StepperMotor28BYJ48 {
 			{ HIGH, LOW,  LOW,  LOW }
 	};
 	
+	/**
+	 * The electric potential sequence to be applied to the motor in
+	 * half step mode.
+	 * @see <https://www.youtube.com/watch?v=B86nqDRskVU>
+	 */
 	private static final PinState HALF_STEP_MOTOR_SEQUENCE[][] = new PinState[][] {
 			{ LOW,  LOW,  LOW,  HIGH },
 			{ LOW,  LOW,  HIGH, HIGH },
@@ -68,7 +83,7 @@ public class StepperMotor28BYJ48 {
 			{ HIGH, LOW,  LOW,  HIGH }
 	};
 	
-	/** The current step duration in milliseconds. **/
+	/** The current step duration in milliseconds (i.e. pause betwenn steps). **/
 	private int stepDuration;
 	
 	/** Holds the Raspberry Pi pin numbers for pins A though D of the stepper motor. **/
