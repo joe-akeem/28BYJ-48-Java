@@ -26,7 +26,7 @@ cd 28BYJ-48-Java
 sudo /opt/apache-maven-3.3.3/bin/mvn install
 ```
 
-This will install the 28BYJ-48-Java in your maven Repository to be used by other projects such as the [Scratch Robot](https://github.com/joe-akeem/scratch-robot)
+This will install the 28BYJ-48-Java library in your maven Repository to be used by other projects such as the [Scratch Robot](https://github.com/joe-akeem/scratch-robot)
 
 ## Run Demo
 
