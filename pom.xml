@@ -17,7 +17,7 @@
 	</properties>
 	
 	<scm>
-		<developerConnection>scm:git:git://github.com/joe-akeem/28BYJ-48-Java.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/joe-akeem/28BYJ-48-Java.git</developerConnection>
 	</scm>
 
 	<dependencies>
